@@ -1,0 +1,28 @@
+{% extends 'book\index.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+    <h1>{{info_data.title}}</h1>
+    <p>Author Name : <span class="label label-default">{{info_data.name_authr}}</span><p>
+    <p>Book publication date : <span class="label label-default">{{info_data.published_date}}</span><p>
+    <p>Book Price : <span class="label label-default">{{info_data.price}}</span><p>
+    <p>Number of books remaining : <span class="label label-default">{{info_data.stock_quantity}}</span><p>
+    
+    <div class="btn-group btn-group-lg">
+       
+        <a type="button" class="btn btn-primary" href= "{% url 'home' %}">Home</a>
+        <a type="button" class="btn btn-primary">Buy Now</a>
+    </div>
+
+
+
+</div>
+{% endblock %}
+
+
+
+
+

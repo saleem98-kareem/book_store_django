@@ -1,0 +1,17 @@
+
+{% extends 'book\index.html'%}
+{% load static %}
+
+{% block content %}
+
+
+
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{form}}
+    <button type="supmit" class="btn btn-success">submit</button>
+    
+</form>
+
+
+{% endblock %}

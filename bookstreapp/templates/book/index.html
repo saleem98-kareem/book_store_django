@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BOOK STOR</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 
+  <style>
+    
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+
+
+</head>
+<body  class="well">
+
+{% include "book/navbar.html" %}
+
+{% block content %}
+
+
+
+
+
+<div class="jumbotron">
+    <div class="container text-center">
+      <h1>BOOK STORE</h1>      
+      <p>Some text that represents "Me"...</p>
+    </div>
+  </div>
+    
+  <div class="container-fluid bg-3 text-center">    
+    <h3>Some of my Work</h3><br>
+
+<div class="row">
+    {% for item in book %}
+      <div class="col-sm-3">
+        <a href="{% url 'info_url' item.id %}" >
+        <p>{{item.title}}</p>
+        <img src="https://dlarabic.com/wp-content/uploads/2022/12/17-1.png" class="img-responsive" style="width:100%" alt="Image">
+        <p>{{item.price}}</p>
+        <p>{{item.name_authr}}</p>
+        </a>
+
+      </div>
+    {% endfor %}
+    
+ </div>
+
+   
+
+
+  </div><br>
+  
+  <div class="container-fluid bg-3 text-center">    
+    <div class="row">
+      <div class="col-sm-3">
+        <p>Some text..</p>
+        <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      </div>
+      
+    </div>
+  </div><br><br>
+  
+  
+
+
+
+
+
+
+
+{% endblock %}
+
+{% include 'book/footer.html'%}
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+

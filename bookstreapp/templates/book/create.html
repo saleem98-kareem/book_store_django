@@ -1,0 +1,91 @@
+{% extends 'book\index.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<div class="jumbotron">
+  <h1 CLASS="CENTER">CRATE NEW BOOK</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="{% url 'dashpord' %}" role="button">Back Dashpord</a></p>
+</div>
+
+
+<div class="row">
+  <div class="col-md-4">
+
+  </div>
+  
+  
+  <div class="col-md-4">
+    
+
+
+
+
+
+
+
+    <div class="form-group">
+
+      <form  action="{% url 'addres' %}" method="POST" >
+         {% csrf_token %}
+  
+          <div class="form-group">
+            <label  for="exampleInputName2" >Book Name</label>
+            <input type="name" class="form-control" id="" name="namebook" >
+          </div>
+  
+  
+        
+           
+  
+  
+          <label for="name">Name Authr</label>
+          <input type="name" class="form-control" id="" name="name_authr" >
+        </div>
+                 
+  
+  
+            <div class="form-group">
+              <label for="name">Book Price </label>
+              <input type="number" class="form-control" id="" name="price">
+            </div>
+  
+  
+            <div class="form-group">
+              <label for="name">Published Date </label>
+              <input datetime="yyyy-mm-dd" class="form-control" id="" name="published_date">
+            </div>
+  
+  
+  
+            <div class="form-group">
+              <label for="name">stack</label>
+              <input type="number" class="form-control" id="" name="stack" >
+            </div>
+  
+  
+  
+          <button type="submit"  class="btn btn-success" >Submit</button>
+        </form>
+  
+      </div>
+  
+
+      <div class="col-md-4">
+      </div>
+      
+
+
+
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends 'book\index.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<h2>Book Table</h2>
+<a  type="button" class="btn btn-info" href ="{% url 'create'  %}" >Create New Book</a>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Name Author</th>
+            <th>published_date</th>
+            <th>price</th>
+            <th>stock_quantity</th>
+            <th>Active</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in book%}
+          <tr>
+            <td>{{item.title}}</td>
+            <td>{{item.name_authr}}</td>
+            <td>{{item.published_date}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.stock_quantity}}</td>
+            <td> 
+
+              <div class="btn-group btn-group-lg">
+                <a  type="button" class="btn btn-primary" href ="{% url 'update_form' item.id %}" >Update</a>
+                <a type="button" class="btn btn-danger"  href ="{% url 'delet_url' item.id %}">Delete</a>
+                <a type="button" class="btn btn-success"  href ="{% url 'info_url' item.id %}"  >Info</a>
+              </div>
+
+            
+            </td>
+
+          </tr>
+         {%endfor%}
+       
+        </tbody>
+      </table>
+
+
+
+<div class="row">
+
+
+  <div class="col-md-4">
+
+    
+  
+<h2>Author Table</h2>
+<a  type="button" class="btn btn-info" href ="{% url 'create'  %}" >Create New Author</a>            
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name Author</th>
+      <th>Biography</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in author%}
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.biography}}</td>
+      <td>
+        <div class="btn-group-vertical">
+          <a type="button" class="btn btn-primary">Update</a>
+          <a type="button" class="btn btn-primary">Delete</a>
+          <a type="button" class="btn btn-primary">Info</a>
+        </div>
+      </td>
+    </tr>
+   {%endfor%}
+ 
+  </tbody>
+</table>
+
+
+  </div>
+  
+
+
+
+  <div class="col-md-4">
+
+    <h2>Publisher Table</h2>
+    <a  type="button" class="btn btn-info" href ="{% url 'create'  %}" >Create New Author</a>            
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name Author</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in publisher%}
+        <tr>
+          <td>{{item.name}}</td>
+          <td>
+            <div class="btn-group">
+              <a type="button" class="btn btn-primary">Update</a>
+              <a type="button" class="btn btn-primary">Delete</a>
+              <a type="button" class="btn btn-primary">Info</a>
+            </div>
+          </td>
+        </tr>
+       {%endfor%}
+     
+      </tbody>
+    </table>
+    
+
+
+
+ </div>
+
+
+
+
+
+
+  <div class="col-md-4">
+
+
+
+
+    <h2>Bordered Table</h2>
+    <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>            
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in book%}
+        <tr>
+          <td>{{item.price}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+        </tr>
+       {%endfor%}
+     
+      </tbody>
+    </table>
+
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}
